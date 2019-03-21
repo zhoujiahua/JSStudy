@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预编译试题2</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        GO:{
+            test:function(){}
+        }
+         */
+        function test(a, b) {
+            console.log(a); // function(){}
+            console.log(b); // undefind
+            var b = 234;
+            console.log(b); //234
+            a = 123; 
+            console.log(a); // 123
+
+            function a() {}
+            var a;
+            b = 234;
+            var b = function () {}
+            console.log(a); //123
+            console.log(b); //function(){}
+        }
+        /* 
+        AO:{
+            a:undefide, //1 //function (){} //123
+            b:undefind, // 234 //function(){} 
+        }
+         */
+        test(1);
+
+    </script>
+</body>
+
+</html>

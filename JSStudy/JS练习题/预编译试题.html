@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预编译试题1</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            GO{
+                a:undefind, // ==> 100
+                demo:funtion (){...} // ==> run
+                f:123
+            }
+         */
+        a = 100;
+        function demo(e) {
+            function e() {}
+            arguments[0] = 2;
+            console.log(e); //2
+            if (a) {
+                var b = 123;
+
+                function c() {}
+            }
+            var c;
+            a = 10;
+            var a;
+            console.log(b); //undefind
+            f = 123;
+            console.log(c); //fn undefind
+            console.log(a); //10
+        }
+
+        var a;
+        /* 
+            AO{ 
+                e:undefind, //1  //==> function (){} 
+                b:undefind, // undefind 
+                c:undefind  //==> function (){}
+                a:undefind  //10
+                
+            }
+         */
+        demo(1);
+        console.log(a); //100
+        console.log(f); //123
+
+    </script>
+</body>
+
+</html>
